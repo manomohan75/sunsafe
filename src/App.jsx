@@ -4,7 +4,6 @@ import sunLogo from './sunlog.png';
 
 const navLinks = [
   { id: 'mission', label: 'Mission' },
-  { id: 'contact', label: 'Contact Us' },
   { id: 'reach', label: 'Reach Us' },
   { id: 'team', label: 'Team' },
 ];
@@ -27,23 +26,24 @@ const reachItems = [
     ),
   },
   {
-    title: 'Phone',
-    body: 'Call or text our volunteer team at (555) 123-4567 for quick questions.',
-  },
-  {
-    title: 'Follow Our Mission',
+    title: 'Social media',
     body: (
       <>
-        Share our GoFundMe to help us equip more families with sun-safe resources.{' '}
-        <a
-          href="https://www.gofundme.com/f/support-skin-cancer-with-sun-safe-society"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Donate or Share
+        Follow us on{' '}
+        <a href="https://www.instagram.com/sunsafesociety" target="_blank" rel="noreferrer">
+          Instagram
+        </a>{' '}
+        and{' '}
+        <a href="https://www.tiktok.com/@sunsafesociety" target="_blank" rel="noreferrer">
+          TikTok
         </a>
+        {' '}(@sunsafesociety).
       </>
     ),
+  },
+  {
+    title: 'Get in Touch',
+    body: 'Want to connect directly? Send us a message and we will get back to you quickly.',
   },
 ];
 
@@ -172,45 +172,6 @@ function App() {
           </div>
         </section>
 
-        <section id="contact" className="contact-section">
-          <div className="container">
-            <h2>Contact Us</h2>
-            <div style={{ marginTop: '3rem', textAlign: 'center' }}>
-              <p style={{ fontSize: '1.1rem', marginBottom: '2rem', color: '#333' }}>
-                Get in touch with us or support our mission.
-              </p>
-
-              <div className="card-grid">
-                <div className="card">
-                  <h3 style={{ color: '#333', marginBottom: '1rem' }}>Support Our Mission</h3>
-                  <p style={{ color: '#666', marginBottom: '1rem' }}>
-                    Help us protect communities from sun damage and skin cancer.
-                  </p>
-                  <a
-                    href="https://www.gofundme.com/f/support-skin-cancer-with-sun-safe-society"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="cta-button"
-                    style={{ display: 'inline-block' }}
-                  >
-                    Donate on GoFundMe
-                  </a>
-                </div>
-
-                <div className="card">
-                  <h3 style={{ color: '#333', marginBottom: '1rem' }}>Get in Touch</h3>
-                  <p style={{ color: '#666', marginBottom: '1rem' }}>
-                    Have questions or want to collaborate with us?
-                  </p>
-                  <button className="cta-button" onClick={() => setShowModal(true)}>
-                    Send us a Message
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
         <section id="reach" className="reach">
           <div className="container">
             <h2>Reach Us</h2>
@@ -219,6 +180,11 @@ function App() {
                 <div className="reach-item" key={item.title}>
                   <h3>{item.title}</h3>
                   <p>{item.body}</p>
+                  {item.title === 'Get in Touch' && (
+                    <button className="cta-button" onClick={() => setShowModal(true)}>
+                      Send us a Message
+                    </button>
+                  )}
                 </div>
               ))}
             </div>

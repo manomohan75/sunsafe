@@ -205,14 +205,14 @@ h2 {
 }
 
 .reach-item a {
-  color: #ffeb3b;
+  color: #1e88e5;
   text-decoration: none;
   font-weight: bold;
   transition: color 0.3s;
 }
 
 .reach-item a:hover {
-  color: #fff59d;
+  color: #63a4ff;
 }
 
 .team {
