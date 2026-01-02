@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+  <circle cx="60" cy="60" r="32" fill="#FFEB3B" />
+  <g fill="#FDB927">
+    <polygon points="60,10 68,32 90,30 74,46 82,68 60,56 38,68 46,46 30,30 52,32" />
+    <polygon points="60,10 68,32 90,30 74,46 82,68 60,56 38,68 46,46 30,30 52,32" transform="rotate(72 60 60)" />
+    <polygon points="60,10 68,32 90,30 74,46 82,68 60,56 38,68 46,46 30,30 52,32" transform="rotate(144 60 60)" />
+    <polygon points="60,10 68,32 90,30 74,46 82,68 60,56 38,68 46,46 30,30 52,32" transform="rotate(216 60 60)" />
+    <polygon points="60,10 68,32 90,30 74,46 82,68 60,56 38,68 46,46 30,30 52,32" transform="rotate(288 60 60)" />
+  </g>
+</svg>

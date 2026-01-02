@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sun Safe Society - Protecting Communities from Sun Damage</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #FFFEF0;
+        }
+
+        header {
+            background: linear-gradient(135deg, #FFEB3B 0%, #FFF59D 100%);
+            color: #333;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(255, 235, 59, 0.3);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        nav a {
+            color: #333;
+            text-decoration: none;
+            margin: 0 1.5rem;
+            transition: opacity 0.3s;
+            cursor: pointer;
+        }
+
+        nav a:hover {
+            opacity: 0.8;
+        }
+
+        .hero {
+            background: #FFFACD;
+            color: #333;
+            padding: 100px 20px;
+            text-align: center;
+        }
+
+        .hero-logo {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 2rem;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500"><circle cx="250" cy="250" r="120" fill="%23FFEB99"/><g fill="%23FDB927"><polygon points="250,80 285,140 350,140 305,185 340,245 250,200 160,245 195,185 150,140 215,140"/><polygon points="250,80 285,140 350,140 305,185 340,245 250,200 160,245 195,185 150,140 215,140" transform="rotate(72 250 250)"/><polygon points="250,80 285,140 350,140 305,185 340,245 250,200 160,245 195,185 150,140 215,140" transform="rotate(144 250 250)"/><polygon points="250,80 285,140 350,140 305,185 340,245 250,200 160,245 195,185 150,140 215,140" transform="rotate(216 250 250)"/><polygon points="250,80 285,140 350,140 305,185 340,245 250,200 160,245 195,185 150,140 215,140" transform="rotate(288 250 250)"/></g><path d="M210 240 Q210 230 220 230 Q230 230 230 240" stroke="%23333" stroke-width="8" fill="none" stroke-linecap="round"/><path d="M270 240 Q270 230 280 230 Q290 230 290 240" stroke="%23333" stroke-width="8" fill="none" stroke-linecap="round"/><circle cx="220" cy="255" r="12" fill="%23FFB6D9"/><circle cx="280" cy="255" r="12" fill="%23FFB6D9"/><path d="M235 280 Q250 295 265 280" stroke="%23333" stroke-width="6" fill="none" stroke-linecap="round"/></svg>') center/contain no-repeat;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            animation: slideIn 0.8s ease-out;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: slideIn 0.8s ease-out 0.2s both;
+        }
+
+        .cta-button {
+            background: #333;
+            color: #FFEB3B;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            animation: slideIn 0.8s ease-out 0.4s both;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        section {
+            scroll-margin-top: 60px;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            margin-bottom: 2rem;
+            color: #333;
+            text-align: center;
+        }
+
+        .mission {
+            background: linear-gradient(135deg, #FFFEF5 0%, #FFFFF0 100%);
+        }
+
+        .mission-text {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .programs {
+            background: white;
+        }
+
+        .programs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .program-card {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(255, 235, 59, 0.15);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 4px solid #FFEB3B;
+        }
+
+        .program-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 25px rgba(255, 235, 59, 0.25);
+        }
+
+        .program-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .program-card h3 {
+            color: #333;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .program-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .team {
+            background: linear-gradient(135deg, #FFFEF5 0%, #FFFFF0 100%);
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .team-member {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .member-avatar {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #FFEB3B 0%, #FFF59D 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+        }
+
+        .member-info {
+            padding: 1.5rem;
+        }
+
+        .member-info h3 {
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+
+        .member-info p {
+            color: #999;
+            font-size: 0.9rem;
+        }
+
+        .reach {
+            background: #FFFEF0;
+        }
+
+        .reach-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .reach-item {
+            background: linear-gradient(135deg, #FFFEF5 0%, #FFFFF0 100%);
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(255, 235, 59, 0.15);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 4px solid #FFEB3B;
+        }
+
+        .reach-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(255, 235, 59, 0.25);
+        }
+
+        .reach-item h3 {
+            color: #333;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .reach-item p {
+            color: #666;
+            font-size: 1rem;
+        }
+
+        .reach-item a {
+            color: #FFEB3B;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .reach-item a:hover {
+            color: #FFF59D;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+
+        footer a {
+            color: #FFEB3B;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .programs {
+            background: white;
+        }
+
+        .programs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .program-card {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(255, 235, 59, 0.15);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 4px solid #FFEB3B;
+        }
+
+        .program-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 25px rgba(255, 235, 59, 0.25);
+        }
+
+        .program-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .program-card h3 {
+            color: #333;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .program-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .donation-section {
+            background: #FFFEF0;
+        }
+
+        .donation-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #FFEB3B;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+            background: white;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #333;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .submit-btn {
+            width: 100%;
+            background: linear-gradient(135deg, #FFEB3B 0%, #FFF59D 100%);
+            color: #333;
+            padding: 12px;
+            border: 2px solid #333;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .form-message {
+            text-align: center;
+            margin-top: 1rem;
+            color: #333;
+            font-size: 0.9rem;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4);
+            animation: fadeIn 0.3s ease-out;
+        }
+
+        .modal-content {
+            background: white;
+            margin: 5% auto;
+            padding: 2rem;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 600px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+            animation: slideDown 0.3s ease-out;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .close-btn {
+            color: #333;
+            float: right;
+            font-size: 2rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .close-btn:hover {
+            color: #666;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            nav a {
+                margin: 0 0.75rem;
+                font-size: 0.9rem;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+            }
+
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .logo {
+                font-size: 1.4rem;
+            }
+
+            nav {
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            nav a {
+                margin: 0.5rem 0.5rem;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .modal-content {
+                width: 95%;
+                margin: 20% auto;
+                padding: 1.5rem;
+            }
+
+            .program-card {
+                padding: 1.5rem;
+            }
+
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .programs-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-button {
+                padding: 10px 20px;
+                font-size: 1rem;
+            }
+
+            .container {
+                padding: 40px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">☀️ Sun Safe Society</div>
+            <nav>
+                <a onclick="scrollToSection('mission')">Mission</a>
+                <a onclick="scrollToSection('contact')">Contact Us</a>
+                <a onclick="scrollToSection('reach')">Reach Us</a>
+                <a onclick="scrollToSection('team')">Team</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>Be Bright, Cover Light</h1>
+        <p>We are a youth-led nonprofit dedicated to raising awareness for Skin cancer and promoting sun safety. Through education, fundraising, and donations we support the Skin Cancer Foundation and want to provide sun-protective supplies to the Shade foundation.</p>
+        <button class="cta-button" onclick="scrollToSection('reach')">Contact Us</button>
+    </section>
+
+    <section id="mission" class="mission">
+        <div class="container">
+            <h2>Our Mission</h2>
+            <div class="mission-text">
+                <p>Sun Safe Society is a student-led non-profit dedicated to combating skin cancer and UV-related health risks through comprehensive education, community outreach, and accessible sun safety resources. We empower students and families with knowledge about sun protection, early skin cancer detection, and healthy habits to enjoy the sun responsibly.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="donate" class="donation-section">
+        <div class="container">
+            <h2>Support Our Mission</h2>
+            <div style="margin-top: 3rem; text-align: center;">
+                <p style="font-size: 1.1rem; margin-bottom: 2rem; color: #333;">Join us in our mission to protect communities from sun damage and skin cancer.</p>
+                
+                <div style="margin-bottom: 2rem;">
+                    <a href="https://www.gofundme.com/f/support-skin-cancer-with-sun-safe-society" target="_blank" class="cta-button" style="display: inline-block;">Donate on GoFundMe</a>
+                </div>
+
+                <div class="gfm-embed" data-url="https://www.gofundme.com/f/support-skin-cancer-with-sun-safe-society/widget/large?sharesheet=undefined&attribution_id=sl:7756ed83-1059-42b3-8f0e-1b6cc554b692"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <div style="margin-top: 3rem; text-align: center;">
+                <p style="font-size: 1.1rem; margin-bottom: 2rem; color: #333;">Get in touch with us or support our mission.</p>
+                
+                <div style="margin-bottom: 2rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+                    <div style="background: linear-gradient(135deg, #FFFEF5 0%, #FFFFF0 100%); padding: 2rem; border-radius: 10px; border-top: 4px solid #FFEB3B;">
+                        <h3 style="color: #333; margin-bottom: 1rem;">Support Our Mission</h3>
+                        <p style="color: #666; margin-bottom: 1rem;">Help us protect communities from sun damage and skin cancer.</p>
+                        <a href="https://www.gofundme.com/f/support-skin-cancer-with-sun-safe-society" target="_blank" class="cta-button" style="display: inline-block;">Donate on GoFundMe</a>
+                    </div>
+                    
+                    <div style="background: linear-gradient(135deg, #FFFEF5 0%, #FFFFF0 100%); padding: 2rem; border-radius: 10px; border-top: 4px solid #FFEB3B;">
+                        <h3 style="color: #333; margin-bottom: 1rem;">Get in Touch</h3>
+                        <p style="color: #666; margin-bottom: 1rem;">Have questions or want to collaborate with us?</p>
+                        <button class="cta-button" onclick="openDonationModal()" style="display: inline-block;">Send us a Message</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="reach" class="reach">
+        <div class="container">
+            <h2>Reach Us</h2>
+            <div class="reach-content">
+                <div class="reach-item">
+                    <h3>Email</h3>
+                    <p>Send us a note anytime at <a href="mailto:sunsafesociety@gmail.com">sunsafesociety@gmail.com</a>.</p>
+                </div>
+                <div class="reach-item">
+                    <h3>Phone</h3>
+                    <p>Call or text our volunteer team at (555) 123-4567 for quick questions.</p>
+                </div>
+                <div class="reach-item">
+                    <h3>Follow Our Mission</h3>
+                    <p>Share our GoFundMe to help us equip more families with sun-safe resources.</p>
+                    <a href="https://www.gofundme.com/f/support-skin-cancer-with-sun-safe-society" target="_blank" rel="noreferrer">Donate or Share</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="team" class="team">
+        <div class="container">
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-avatar">👩‍⚕️</div>
+                    <div class="member-info">
+                        <h3>Arshitha Mohanadoss</h3>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="member-avatar">👩‍🏫</div>
+                    <div class="member-info">
+                        <h3>Lasya Sattu</h3>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="member-avatar">👩‍💼</div>
+                    <div class="member-info">
+                        <h3>Diya Karthik</h3>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="member-avatar">👩‍💼</div>
+                    <div class="member-info">
+                        <h3>Akshara Bayyapureddy</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Sun Safe Society. All rights reserved. | Protecting skin, saving lives.</p>
+        <p>Contact: <a href="mailto:sunsafesociety@gmail.com">sunsafesociety@gmail.com</a> | (555) 123-4567</p>
+    </footer>
+
+    <div id="donationModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeDonationModal()">&times;</span>
+            <h2>Support Our Mission</h2>
+            <form id="donationForm">
+                <div class="form-group">
+                    <label for="name">Full Name *</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="amount">Donation Amount ($) *</label>
+                        <input type="number" id="amount" name="amount" min="1" step="0.01" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="type">Donation Type *</label>
+                        <select id="type" name="type" required>
+                            <option value="">Select Type</option>
+                            <option value="One-time">One-time</option>
+                            <option value="Monthly">Monthly</option>
+                            <option value="Annual">Annual</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message (Optional)</label>
+                    <input type="text" id="message" name="message" placeholder="Tell us why this cause matters to you...">
+                </div>
+
+                <button type="submit" class="submit-btn">Make Your Donation</button>
+                <div class="form-message">
+                    Your donation will help us protect communities from sun damage and skin cancer.
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script defer src="https://www.gofundme.com/static/js/embed.js"></script>
+
+    <script>
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+
+        function openDonationModal() {
+            document.getElementById("donationModal").style.display = "block";
+        }
+
+        function closeDonationModal() {
+            document.getElementById("donationModal").style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById("donationModal");
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        document.getElementById("donationForm").addEventListener("submit", function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const phone = document.getElementById("phone").value;
+            const amount = document.getElementById("amount").value;
+            const type = document.getElementById("type").value;
+            const message = document.getElementById("message").value;
+            
+            const subject = "New Donation Received - Sun Safe Society";
+            const body = `Donation Details:\n\nName: ${name}\nEmail: ${email}\nPhone: ${phone}\nDonation Amount: ${amount}\nDonation Type: ${type}\nMessage: ${message || "None"}`;
+            
+            const mailtoLink = `mailto:sunsafesociety@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            window.location.href = mailtoLink;
+            
+            setTimeout(() => {
+                alert("Thank you for your donation!\n\nYour email client should open to send the donation details. If it doesn't, please copy this information and email it to: sunsafesociety@gmail.com\n\nDonation Amount: $" + amount + "\nDonor Email: " + email);
+                document.getElementById("donationForm").reset();
+                closeDonationModal();
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
