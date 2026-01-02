@@ -6,6 +6,7 @@ const navLinks = [
   { id: 'mission', label: 'Mission' },
   { id: 'reach', label: 'Reach Us' },
   { id: 'team', label: 'Team' },
+  { id: 'faq', label: 'FAQ' },
 ];
 
 const team = [
@@ -49,6 +50,7 @@ const reachItems = [
 
 function App() {
   const [showModal, setShowModal] = useState(false);
+  const [openFaq, setOpenFaq] = useState(null);
 
   useEffect(() => {
     const existing = document.querySelector('script[data-gfm-embed]');
@@ -193,6 +195,7 @@ function App() {
 
         <section id="team" className="team">
           <div className="container">
+            <h2>Team</h2>
             <div className="team-grid">
               {team.map((member) => (
                 <div className="team-member" key={member.name}>
@@ -204,6 +207,49 @@ function App() {
                   </div>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="faq" className="faq">
+          <div className="container">
+            <h2>FAQ</h2>
+            <div className="faq-list">
+              {[
+                {
+                  q: 'How do donations help?',
+                  a: 'Funds go toward educational outreach, sun safety supplies, and support for the Skin Cancer and Shade foundations.',
+                },
+                {
+                  q: 'Can I volunteer?',
+                  a: 'Yes! Send us a message with your interests and location—we welcome volunteers for events, outreach, and social media.',
+                },
+                {
+                  q: 'Do you partner with schools or clubs?',
+                  a: 'We collaborate with schools, youth clubs, and community groups to host workshops and awareness events.',
+                },
+                {
+                  q: 'What’s the best way to reach you?',
+                  a: 'Use the “Send us a Message” button above to open our form, or email sunsafesociety@gmail.com.',
+                },
+              ].map((item, idx) => {
+                const isOpen = openFaq === idx;
+                return (
+                  <div className="faq-item" key={item.q}>
+                    <button
+                      className="faq-question"
+                      aria-expanded={isOpen}
+                      onClick={() => setOpenFaq(isOpen ? null : idx)}
+                    >
+                      <span>{item.q}</span>
+                      <span className="faq-toggle" aria-hidden="true">
+                        {isOpen ? '−' : '+'}
+                      </span>
+                    </button>
+                    {isOpen && <p className="faq-answer">{item.a}</p>}
+                  </div>
+                );
+              })}
             </div>
           </div>
         </section>
